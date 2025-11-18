@@ -7,7 +7,7 @@
 .yt-card {
   background-color: #0f0f0f;
   border-radius: 12px;
-  overflow: hidden;
+  /* overflow: hidden; */
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   display: flex;
@@ -27,6 +27,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+  /* min-height: 220px; */
   overflow: hidden;
   background-color: #1a1a1a;
   border-radius: 12px 12px 0 0;
