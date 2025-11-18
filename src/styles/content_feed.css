@@ -1,0 +1,21 @@
+.content_feed{
+    /* padding: 1em; */
+    /* border:1px solid aqua; */
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    max-width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* flex:1; */
+}
+.home_content{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    overflow: auto;
+    /* max-width: 100%; */
+    /* padding: 1em; */
+    flex-wrap: wrap;
+}

@@ -1,0 +1,19 @@
+.top_nav_bar{
+    margin: 0;
+    color:#ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 14rem;
+    align-items: center;
+    padding-left: 1.5em;
+}
+.logo_img{
+    max-height: 28px;
+    /* max-width: 28px; */
+    /* background-color: white; */
+} 
+.logo{
+    padding:0;
+    margin:0;
+}

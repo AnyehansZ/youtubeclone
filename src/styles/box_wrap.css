@@ -1,0 +1,9 @@
+.box_wrap{
+    display:flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    max-width:100%;
+    min-width: 100%;
+    /* flex:1; */
+    overflow:hidden;
+}

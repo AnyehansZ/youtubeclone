@@ -1,0 +1,11 @@
+.app_container{
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0;
+    /* padding: 0; */
+    padding-top:0.5rem;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid blueviolet; */
+}

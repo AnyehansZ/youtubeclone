@@ -1,0 +1,48 @@
+.view_days{
+    display: flex;
+    align-items: center;
+    color:#8a8989;
+}
+.details{
+    display: flex;
+}
+.image_view{
+    /* height: 100%; */
+    /* width: 100%; */
+    border-radius:20px;
+    overflow: hidden;
+    border:1px solid whitesmoke;
+}
+.channel_logo{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.channel_logo img,.image_view img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.card_box{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    /* flex-grow: 2; */
+    gap:1em;
+    flex-shrink: 0;
+    max-width:100%;
+    max-height: 60%;
+    min-width:300px;
+    /* min-width:auto; */
+    box-sizing: border-box;
+}
+.details{
+    display: flex;
+    gap:1em;
+}
+.detail_info{
+    display: flex;
+    justify-content: space-between;
+}
