@@ -4,7 +4,7 @@ export default function FilterButton({ categories }) {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
   return (
-    <div style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto' }}>
+    <>
       {categories.map((category, index) => (
         <button
           key={index}
@@ -23,6 +23,6 @@ export default function FilterButton({ categories }) {
           {category}
         </button>
       ))}
-    </div>
+    </>
   );
 }

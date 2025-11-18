@@ -9,19 +9,23 @@
     /* background-color: #242424; */
 }
 
-
+div.filter_btn_wrap{
+    scrollbar-width:none;
+}
 
 .filter_btn_wrap{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1em;
+    border: 2px solid blue;
     /* padding: 0.5em 1em; */
     color: white;
     /* flex-wrap: wrap; */
     overflow: auto;
     /* justify-content: space-between; */
-    scrollbar-width: none;
+    scrollbar-width:16;
+    scrollbar-color: red;
     padding: 2px;
     cursor: pointer;
 }
