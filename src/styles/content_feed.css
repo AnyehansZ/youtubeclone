@@ -1,21 +1,83 @@
-.content_feed{
-    /* padding: 1em; */
-    /* border:1px solid aqua; */
-    overflow:hidden;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    max-width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    /* flex:1; */
+.content_feed {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: #0f0f0f;
+  padding: 0;
 }
-.home_content{
-    display: flex;
-    flex-direction: row;
-    flex:1;
-    overflow: auto;
-    /* max-width: 100%; */
-    /* padding: 1em; */
-    flex-wrap: wrap;
+
+.home_content {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Extra Large Screens (1920px+) */
+@media (min-width: 1920px) {
+  .home_content {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+/* Large Screens (1366px - 1919px) */
+@media (min-width: 1366px) and (max-width: 1919px) {
+  .home_content {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+/* Medium Screens / Tablets (768px - 1365px) */
+@media (min-width: 768px) and (max-width: 1365px) {
+  .home_content {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+    padding: 12px;
+  }
+}
+
+/* Small Tablets / Large Mobile (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .home_content {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .home_content {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 8px;
+  }
+}
+
+/* Scrollbar Styling */
+.home_content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.home_content::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+
+.home_content::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 6px;
+}
+
+.home_content::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
 }
