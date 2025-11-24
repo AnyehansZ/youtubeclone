@@ -1,0 +1,90 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #181818; 
+}
+.login-card {
+  width: 500px;
+  background-color: #1E1E1E; 
+  border-radius: 16px;
+  overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+  position: relative;
+}
+
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Below the content */
+  background-image: 
+    linear-gradient(
+      to right, 
+      rgba(30, 30, 30, 0.2) 0%,   /* Start with a slight overlay to blur the image */
+      rgba(30, 30, 30, 0.9) 45%,  /* Transition to mostly dark */
+      rgba(30, 30, 30, 1) 50%    /* Fully opaque dark color from the halfway mark */
+    ),
+    url('src/assets/video_pattern_image.png'); 
+  background-size: cover;
+  background-position: center left; 
+  filter: blur(0px);
+}
+
+
+.card-content {
+  position: relative;
+  z-index: 2; 
+  padding: 40px;
+  text-align: center;
+  color: #ffffff;
+}
+
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2D2D2D; 
+  color: #ffffff;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+input:focus {
+    outline: none; 
+    border: 1px solid #FF3347; /* Use the bright red login button color */
+    box-shadow:  0 0 0 2px rgba(255, 51, 71, 0.4), inset 0 1px 3px rgba(0, 0, 0, 0.5); 
+    background-color: #353535; 
+}
+.login-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF3347; 
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.separator {
+  margin: 20px 0;
+  font-size: 0.9em;
+  color: #AAAAAA;
+}
+
+/* Social Login Icons */
+.social-login button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    width: 32px;
+    height: 32px;
+}
