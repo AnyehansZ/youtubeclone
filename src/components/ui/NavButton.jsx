@@ -1,7 +1,9 @@
+// import {useState} from 'react';
 import '@styles/navigation.css';
 
 // Navigation button base component
-export default function NavButton({ StartIcon, ButtonName, EndIcon, Color, EndSize }) {
+export default function NavButton({ StartIcon, ButtonName, EndIcon, Color, EndSize, Active }) {
+  // const [styleChange,setStyleChange]=useState(false)
   return (
     <div className="button-wrap">
       <button className="button">
