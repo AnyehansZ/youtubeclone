@@ -1,57 +1,100 @@
-/* FloatingInput.css */
-
-/* --- General Setup & Initial State (Unchanged) --- */
-.input-group {
-    position: relative; 
-    margin: 20px 0;
-    width: 350px;
-    border:1px solid green;
-    z-index: 1;
-}
-
-.form-input {
-    width: 100%;
-    padding: 18px 12px 6px 12px; 
-    /* border: 2px solid #ccc; Thicker border */
-    border-radius: 4px;
-    font-size: 16px;
-    color: #000;
-    background: transparent;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.input-group label {
-    position: absolute;
-    top: 50%; 
-    left: 12px;
-    color: #6c757d; 
-    pointer-events: none; 
-    transform: translateY(-50%); 
-    transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease, background-color 0.3s ease;
-    z-index: 1; 
-}
-
-.form-input:focus {
-    border-color: #0d6efd; 
-}
-
-.input-group .label-floated,
-.form-input:focus + label {
-    /* Position and size adjustments */
-    transform: translate(0, -150%);
-    font-size: 12px;
-    padding: 0 5px;
-    
-    /* ------------------------------------------------------------------ */
-    /* *** THE FIX: SET MASKING BACKGROUND COLOR *** */
-    /* If the container is dark, use the container's dark color to mask the border */
+.sign-up-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #181818; 
+  }
+  .sign-up-card {
+    width: 500px;
     background-color: #1E1E1E; 
-    /* ------------------------------------------------------------------ */
-    
-    /* Ensure the masked label sits above the border */
-    z-index: 3; 
-    
-    /* Change the label text color to the blue accent color */
-    color: #0d6efd; 
-}
+    border-radius: 16px;
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+    position: relative;
+  }
+  
+  /* .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    background-image: 
+      linear-gradient(
+        to right, 
+        rgba(30, 30, 30, 0.2) 0%,   
+        rgba(30, 30, 30, 0.9) 45%,  
+        rgba(30, 30, 30, 1) 50%
+      ),
+      url('src/assets/video_pattern_image.png'); 
+    background-size: cover;
+    background-position: center left; 
+    filter: blur(0px);
+  } */
+  
+  
+  .card-content {
+    position: relative;
+    z-index: 2; 
+    padding: 40px;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2D2D2D; 
+    color: #ffffff;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+  }
+  input:focus {
+      outline: none; 
+      border: 1px solid #FF3347; /* Use the bright red sign-up button color */
+      box-shadow:  0 0 0 2px rgba(255, 51, 71, 0.4), inset 0 1px 3px rgba(0, 0, 0, 0.5); 
+      background-color: #353535; 
+  }
+  .sign-up-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #FF3347; 
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .separator {
+    margin: 20px 0;
+    font-size: 0.9em;
+    color: #AAAAAA;
+  }
+  
+  .social-sign-up{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    overflow:hidden;
+    gap:10px;
+  }
+  /* Social Login Icons */
+  .social-icon-button{
+    background:transparent;
+    cursor: pointer;
+    padding:6px;
+    border:none;
+ }
+.social-icon-button img{
+    height: 30px;
+    width: 32px;
+    object-fit:cover ;
+} 
