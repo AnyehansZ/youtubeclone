@@ -2,6 +2,8 @@ import '@styles/sign_up.css';
 import React from 'react';
 import Google from '@assets/google.svg';
 import X from '@assets/x.svg';
+import Logo from '@assets/YT/logo.svg';
+
 
 export default function SignUp() {
   return (
@@ -9,9 +11,9 @@ export default function SignUp() {
       <div className="sign-up-card">
         {/* The background effect layer */}
         <div className="card-background"></div> 
-
         <div className="card-content">
           <div className="logo">
+            <img src={Logo} alt="Logo" className="logo_img" />
             {/* YouTube-like icon-button */}
           </div>
           <h2>Create New Account</h2>
