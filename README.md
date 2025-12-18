@@ -1,230 +1,306 @@
-﻿# ytube_clone
+﻿# 🎬 YouTube Clone
 
-A YouTube-style UI clone built with React and Vite using a feature-based directory structure with absolute imports.
+A modern YouTube-style UI built with **React 19** and **Vite**, featuring a clean feature-based architecture with absolute imports and client-side form validation using React Hook Form and Zod.
 
-## Table of Contents
+> **Status:** UI prototype / demo. No backend integration.
 
-- [Quick Summary](#quick-summary)
-- [Requirements](#requirements)
-- [Setup & Run](#setup--run)
-- [Available Scripts](#available-scripts)
-- [Project Structure](#project-structure)
-- [Absolute Imports](#absolute-imports)
-- [Architecture](#architecture)
-- [Styling](#styling)
-- [Contributing](#contributing)
-- [Troubleshooting](#troubleshooting)
-- [Tech Stack](#tech-stack)
-- [License](#license)
+## 📋 Table of Contents
 
-## Quick Summary
+- [Quick Start](#-quick-start)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Available Scripts](#-available-scripts)
+- [Architecture](#-architecture)
+- [Absolute Imports](#-absolute-imports)
+- [Styling & Responsive Design](#-styling--responsive-design)
+- [Form Validation](#-form-validation)
+- [Contributing](#-contributing)
+- [Troubleshooting](#-troubleshooting)
+- [License](#-license)
 
-- **Framework:** React v19
-- **Bundler / Dev:** Vite
-- **Languages:** JavaScript (JSX) + CSS
-- **Architecture:** Feature-based with absolute imports
-- **Status:** UI prototype / demo (no backend)
+## 🚀 Quick Start
 
-## Requirements
+```bash
+# Clone and install
+git clone <repo-url>
+cd youtubeclone
+npm install
 
-- Node.js (v16+) and npm
+# Start development server
+npm run dev
 
-## Setup & Run
+# Open in browser
+# http://localhost:5173
+```
 
-1. Clone the repo
-2. Install dependencies: `npm install`
-3. Start dev server: `npm run dev`
-4. Open http://localhost:5173
+## ✨ Features
 
-## Available Scripts
+- ✅ YouTube-inspired UI layout (responsive across all breakpoints)
+- ✅ Feature-based component architecture
+- ✅ Absolute imports for cleaner code
+- ✅ Client-side authentication forms (login & signup)
+- ✅ Form validation with **React Hook Form + Zod**
+- ✅ Mock video feed with filter categories
+- ✅ ESLint configured
+- ✅ NPM-only (Yarn removed to avoid conflicts)
 
-- `npm run dev` — start Vite dev server (hot reload)
-- `npm run build` — create production build
-- `npm run preview` — preview production build locally
-- `npm run lint` — run ESLint
+## 🛠 Tech Stack
 
-## Project Structure
+| Layer | Technology |
+|-------|-----------|
+| **Framework** | React 19.1.1 |
+| **Build Tool** | Vite 7.1.7 |
+| **Form Validation** | React Hook Form 7.68.0 + Zod 4.2.1 |
+| **Icons** | Lucide React 0.553.0 |
+| **Linting** | ESLint 9.36.0 |
+| **Language** | JavaScript (JSX) |
+| **Styling** | Global CSS (no CSS-in-JS) |
+
+## 📁 Project Structure
 
 ```
-ytube_clone/
+youtubeclone/
 ├── src/
-│   ├── assets/                      # Static images and logos
-│   │   ├── logo.jpg                 # Generic logo image
-│   │   ├── poster.jpg               # Video poster/thumbnail placeholder
-│   │   └── YT/                      # YouTube-specific assets
-│   │       ├── logo.svg             # YouTube logo (used in TopNavBar)
-│   │       ├── profile.jpg          # Channel profile images
-│   │       └── 32px-YouTube_full-color_icon_(2017).svg.png  # Favicon
+│   ├── assets/                          # Static images, logos, SVGs
+│   │   ├── google.svg
+│   │   ├── logo.jpg
+│   │   ├── poster.jpg
+│   │   ├── video_pattern_image.png
+│   │   ├── x.svg
+│   │   └── YT/                          # YouTube-specific assets
+│   │       ├── 32px-YouTube_full-color_icon_(2017).svg.png
+│   │       ├── logo.svg
+│   │       └── profile.jpg
 │   │
-│   ├── components/                  # Reusable React components
-│   │   ├── common/                  # Large layout & container components
-│   │   │   ├── TopNavBar.jsx        # Top navigation (logo, search, toolbar)
-│   │   │   ├── SideNavBar.jsx       # Left sidebar with navigation
-│   │   │   ├── BoxWrap.jsx          # Main layout wrapper (sidebar + content)
-│   │   │   ├── ContentFeed.jsx      # Feed container with filter
-│   │   │   ├── Card.jsx             # YouTube-style video card (RESPONSIVE)
-│   │   │   ├── FilterCategories.jsx # Category filter bar
-│   │   │   ├── SearchBarContainer.jsx # Search bar wrapper
-│   │   │   ├── ToolbarContainer.jsx # Toolbar (create, notif, profile)
-│   │   │   ├── PageNavigation.jsx   # Primary nav (Home, Shorts, Subs)
-│   │   │   ├── OptionPageNavigation.jsx # User options (History, Playlist)
-│   │   │   ├── SubscriptionNavigation.jsx # Subscriptions list
-│   │   │   ├── ExploreNavigation.jsx # Explore categories
-│   │   │   ├── MoreNavigation.jsx   # Additional options
-│   │   │   ├── FooterNavigation.jsx # Footer links
-│   │   │   ├── SearchToolbarWrapper.jsx # Search + toolbar combo
-│   │   │   └── LogoContainer.jsx    # Logo + menu button
+│   ├── components/                      # Reusable React components
+│   │   ├── common/                      # Container & layout components
+│   │   │   ├── BoxWrap.jsx              # Main layout wrapper
+│   │   │   ├── Card.jsx                 # YouTube-style video card
+│   │   │   ├── ContentFeed.jsx          # Video feed container
+│   │   │   ├── ExploreNavigation.jsx
+│   │   │   ├── FilterCategories.jsx     # Category filter bar
+│   │   │   ├── FooterNavigation.jsx
+│   │   │   ├── HomeContent.jsx
+│   │   │   ├── LogoContainer.jsx
+│   │   │   ├── MoreNavigation.jsx
+│   │   │   ├── OptionPageNavigation.jsx
+│   │   │   ├── PageNavigation.jsx       # Primary nav (Home, Shorts, Subs)
+│   │   │   ├── SearchBarContainer.jsx
+│   │   │   ├── SearchToolbarWrapper.jsx
+│   │   │   ├── SideNavBar.jsx           # Left sidebar
+│   │   │   ├── SubscriptionNavigation.jsx
+│   │   │   ├── ToolbarContainer.jsx     # Toolbar (create, notif, profile)
+│   │   │   └── TopNavBar.jsx            # Top navigation bar
 │   │   │
-│   │   └── ui/                      # Small reusable UI components (atoms)
-│   │       ├── MenuButton.jsx       # Hamburger menu icon
-│   │       ├── SearchBar.jsx        # Search input field
-│   │       ├── SearchButton.jsx     # Search icon button
-│   │       ├── MicrophoneButton.jsx # Voice search button (perfect circle)
-│   │       ├── FilterButton.jsx     # Individual filter category buttons
-│   │       ├── NavButton.jsx        # Base navigation button
-│   │       ├── CreateButton.jsx     # Create/upload video button
-│   │       ├── NotificationButton.jsx # Notifications bell icon
-│   │       ├── ProfileButton.jsx    # Profile/account dropdown
-│   │       └── SubsButton.jsx       # Subscription channel buttons
+│   │   └── ui/                          # Atomic UI components
+│   │       ├── CreateButton.jsx
+│   │       ├── FilterButton.jsx
+│   │       ├── MenuButton.jsx           # Hamburger menu
+│   │       ├── MicrophoneButton.jsx
+│   │       ├── NavButton.jsx
+│   │       ├── NotificationButton.jsx
+│   │       ├── ProfileButton.jsx
+│   │       ├── SearchBar.jsx
+│   │       ├── SearchButton.jsx
+│   │       └── SubsButton.jsx
 │   │
-│   ├── features/                    # Feature-based business logic
+│   ├── features/                        # Feature-based business logic
+│   │   ├── authentication/              # Auth forms & validation
+│   │   │   ├── login/
+│   │   │   │   └── login.jsx           # Login form (Zod validation)
+│   │   │   └── signup/
+│   │   │       └── sign_up.jsx         # Signup form (Zod validation)
 │   │   └── home/
-│   │       └── Home.jsx             # Home page main entry point
+│   │       └── Home.jsx                 # Home page entry
 │   │
-│   ├── services/                    # Data, API calls, constants
-│   │   └── videoData.js             # Sample video data (9 videos)
-│   │                                # Filter configurations
-│   │                                # Categories and metadata
+│   ├── services/                        # Data layer & utilities
+│   │   └── videoData.js                 # Mock video data & configs
 │   │
-│   ├── hooks/                       # Custom React hooks (future use)
+│   ├── styles/                          # Global CSS (no modules)
+│   │   ├── App.css
+│   │   ├── box_wrap.css
+│   │   ├── card.css                     # Card styles (responsive)
+│   │   ├── content_feed.css
+│   │   ├── filter.css
+│   │   ├── index.css
+│   │   ├── login.css                    # Login form styles
+│   │   ├── navigation.css
+│   │   ├── page_container.css
+│   │   ├── sign_up.css                  # Signup form styles
+│   │   ├── side_nav_bar.css
+│   │   ├── top_nav_bar.css
+│   │   └── wrapper.css
 │   │
-│   ├── utils/                       # Utility functions (future use)
-│   │
-│   ├── styles/                      # Global CSS files (NO CSS modules)
-│   │   ├── card.css                 # YouTube-style cards (9 breakpoints)
-│   │   ├── content_feed.css         # Feed grid layout (responsive)
-│   │   ├── wrapper.css              # Buttons, toolbar, search styles
-│   │   ├── navigation.css           # Nav buttons & sidebar styles
-│   │   ├── filter.css               # Filter bar styles
-│   │   ├── page_container.css       # Page layout container
-│   │   ├── box_wrap.css             # Main wrapper layout
-│   │   ├── top_nav_bar.css          # Top bar styles
-│   │   ├── side_nav_bar.css         # Sidebar styles
-│   │   ├── App.css                  # Root app styles
-│   │   └── index.css                # Global styles
-│   │
-│   ├── App.jsx                      # Root component
+│   ├── App.jsx                          # Root component
 │   ├── App.css
-│   ├── main.jsx                     # React entry point (renders App)
+│   ├── main.jsx                         # React entry point
 │   └── index.css
 │
-├── public/                          # Static files served directly
-│   └── 32px-YouTube_full-color_icon_(2017).svg.png  # Favicon
-│
-├── index.html                       # Single HTML entry point
-├── jsconfig.json                    # Absolute import path aliases
-├── vite.config.js                   # Vite build configuration
-├── package.json                     # Dependencies & npm scripts
-├── package-lock.json                # Dependency lock file
-├── eslint.config.js                 # ESLint configuration
-└── README.md                        # This file
+├── public/                              # Static assets (copied to dist)
+├── index.html                           # HTML entry point
+├── jsconfig.json                        # Path aliases config
+├── vite.config.js                       # Vite build config
+├── package.json                         # Dependencies & scripts
+├── package-lock.json                    # Lockfile (NPM)
+├── eslint.config.js                     # ESLint rules
+└── README.md                            # This file
 ```
 
-### Key Directories Explained
+## 🚀 Getting Started
 
-**`src/components/common/`** — Container & layout components
-- Large, composed components that represent major UI sections
-- Examples: TopNavBar, SideNavBar, Card, ContentFeed
-- Import and orchestrate smaller UI components
+### Prerequisites
 
-**`src/components/ui/`** — Atomic UI components
-- Small, single-purpose components (buttons, inputs, icons)
-- Reusable across multiple container components
-- Examples: MenuButton, SearchBar, CreateButton
+- **Node.js** v16 or higher
+- **npm** (Yarn is not used in this project)
 
-**`src/features/home/`** — Feature entry point
-- Currently contains Home.jsx (home page)
-- Extensible: add more features like `src/features/search/`, `src/features/watch/`, etc.
-- Each feature contains its own logic and component orchestration
+### Installation & Development
 
-**`src/services/`** — Data & API layer
-- videoData.js contains mock data and configurations
-- Ready to replace with real API calls
-- Centralized data source for all components
+```bash
+# Install dependencies
+npm install
 
-## Absolute Imports
+# Start dev server (hot reload)
+npm run dev
 
-This project uses path aliases for clean imports:
+# Open browser at http://localhost:5173
+```
 
-Available aliases:
-- @components/* → src/components/*
-- @features/* → src/features/*
-- @services/* → src/services/*
-- @hooks/* → src/hooks/*
-- @utils/* → src/utils/*
-- @assets/* → src/assets/*
-- @styles/* → src/styles/*
+## 📜 Available Scripts
 
-## Architecture
+```bash
+npm run dev       # Start Vite dev server with hot reload
+npm run build     # Create optimized production build
+npm run preview   # Preview production build locally
+npm run lint      # Run ESLint to check code quality
+```
 
-### Feature-Based Organization
-- Code organized by feature, not by type
-- /src/features/home/ contains all home page code
+## 🏗 Architecture
 
-### Components
-- **components/common/** — Layout & container components
-- **components/ui/** — Tiny, reusable UI atoms
+This project follows a **feature-based architecture**:
 
-### Services
-- services/videoData.js holds sample data and filter configs
+- **Features** are self-contained units under `src/features/<feature>/`
+- Each feature contains components, styles, and logic
+- Components are split into:
+  - **`common/`** — Large container & layout components
+  - **`ui/`** — Small reusable UI atoms (buttons, inputs, icons)
+- **Services** layer handles data and constants
+- **Styles** are global CSS files (no CSS-in-JS)
 
-## Styling
+### Why Feature-Based?
 
-### Responsive Breakpoints
-- Extra Large (1920px+): 5 columns
-- Large (1366-1919px): 4 columns
-- Medium (768-1365px): 3-4 columns
-- Small Tablets (481-767px): 2-3 columns
-- Mobile (320-480px): 1 column
+- Scales well as the app grows
+- Easier code organization and maintenance
+- Clear separation of concerns
+- Simple to add new features
 
-### Features
-- YouTube-style video cards with hover effects
-- Thumbnail zoom animation
-- Circular channel avatars
-- Dark mode support
-- High contrast mode support
-- Reduced motion support
-- Keyboard navigation support
+## 🔗 Absolute Imports
 
-## Contributing
+Clean imports using path aliases (configured in `jsconfig.json` and `vite.config.js`):
 
-When adding code:
-1. Keep components small with one purpose
-2. Use absolute imports
-3. Co-locate related code together
-4. Follow the folder structure
-5. Run npm run lint before committing
+```javascript
+// Instead of:
+import Button from '../../../components/ui/Button'
 
-## Troubleshooting
+// Use:
+import Button from '@components/ui/Button'
+```
+
+**Available aliases:**
+- `@components/*` → `src/components/*`
+- `@features/*` → `src/features/*`
+- `@services/*` → `src/services/*`
+- `@assets/*` → `src/assets/*`
+- `@styles/*` → `src/styles/*`
+
+## 🎨 Styling & Responsive Design
+
+- **Global CSS** files in `src/styles/` (no CSS modules)
+- **Responsive breakpoints** inspired by YouTube:
+  - Extra Large (1920px+): 5 columns
+  - Large (1366–1919px): 4 columns
+  - Medium (768–1365px): 3–4 columns
+  - Tablets (481–767px): 2–3 columns
+  - Mobile (320–480px): 1 column
+
+Features:
+- Hover effects on cards and buttons
+- Thumbnail zoom animations
+- Dark mode support ready
+- Accessibility support (high contrast, reduced motion)
+
+## ✅ Form Validation
+
+Authentication forms (login & signup) use **React Hook Form** with **Zod** for type-safe validation:
+
+**Login Form** (`src/features/authentication/login/login.jsx`):
+- Email validation (required, valid email format)
+- Password validation (minimum 8 characters)
+
+**Signup Form** (`src/features/authentication/signup/sign_up.jsx`):
+- Username validation (3–30 characters)
+- Email validation (required, valid format)
+- Password validation (minimum 6 characters)
+- Confirm password with field matching
+- Custom error messages
+
+**Example validation schema (Zod):**
+```javascript
+const schema = z.object({
+  email: z.string().email("Invalid email address").min(1, "Email is required"),
+  password: z.string().min(8, "Password must be at least 8 characters"),
+});
+```
+
+> **Note:** Forms are client-side only. Submissions currently log to console.
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how:
+
+1. **Open an issue** describing the feature or fix
+2. **Create a branch** from `main`:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Keep code clean:**
+   - Use absolute imports
+   - Keep components focused (single responsibility)
+   - Reuse UI atoms where possible
+4. **Run linting** before committing:
+   ```bash
+   npm run lint
+   ```
+5. **Open a Pull Request** with a clear description
+
+## 🐛 Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
-| Dev server won't start | Check Node.js (16+), run npm install |
-| Import errors | Restart VS Code, verify jsconfig.json |
-| Absolute imports failing | Check vite.config.js resolve.alias |
-| ESLint errors | Run npm run lint |
+| **Dev server won't start** | Ensure Node.js v16+, run `npm install`, then `npm run dev` |
+| **Import paths failing** | Verify `jsconfig.json` and `vite.config.js` are correct; restart editor |
+| **ESLint errors** | Run `npm run lint` to check and understand issues |
+| **Lockfile conflicts** | This project uses npm only. Delete any `yarn.lock` if present |
+| **Module not found** | Clear `node_modules/` and run `npm install` again |
 
-## Tech Stack
+## 📝 Recent Changes
 
-- React 19.1.1
-- Vite 7.1.7
-- Lucide React 0.553.0
-- ESLint 9.36.0
+- ✅ Authentication forms implemented (login & signup)
+- ✅ Implemented form validation with **Zod** + React Hook Form
+- ✅ Project uses **NPM only** for dependency management
+- ✅ Updated README with complete project structure
 
-## License
+## 📄 License
 
-No license specified. Add a LICENSE file (MIT, Apache 2.0, etc.).
+This project has no license specified. If you plan to publish or share it, consider adding a `LICENSE` file (e.g., MIT, Apache 2.0).
 
 ---
 
-Made with ❤️ using React, Vite, and modern web standards.
+<div align="center">
+
+**Made with ❤️ using React, Vite, and modern web standards**
+
+[⬆ Back to Top](#-youtube-clone)
+
+</div>

@@ -77,6 +77,9 @@
     border-radius: 20px;
     background-color: #212121;
     padding: 0.5rem 0.8rem;
+    display:flex;
+    justify-content:center;
+    flex-direction: row;
     border:none;
     font-size: large;
     gap:0.2em
@@ -115,7 +118,6 @@ p{
 }
 .profile_btn_rounded{
     border-radius: 50%;
-    background-color: #212121;
     border:none;
     height:2.2rem;
     width:2.2rem;
