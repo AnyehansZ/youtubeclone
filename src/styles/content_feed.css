@@ -6,6 +6,7 @@
   overflow: hidden;
   background-color: #0f0f0f;
   padding: 0;
+  flex: 1;
 }
 
 .home_content {

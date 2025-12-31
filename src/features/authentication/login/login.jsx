@@ -3,9 +3,13 @@ import Logo from '@assets/YT/logo.svg';
 import React from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-
+import { useForm } from "react-hook-form";
 
 export default function Login() {
+  const schema = z.object({
+    email: z.string().email("Invalid email address").min(1, "Email is required"),
+    password: z.string().min(8, "Password must be at least 8 characters").max(32, "Password must not exceed 32 characters"),
+  });
   const {
     register,
     handleSubmit,
@@ -13,15 +17,9 @@ export default function Login() {
   } = useForm({
     resolver: zodResolver(schema)
   });
-  // const onSubmit = async (data) => {
-  //   await login(data.email, data.password)
-  //   reset()
-  // };
+
   const onSubmit = (data) => console.log("log in Data:", data);
-  const schema = z.object({
-    email: z.string().email("Invalid email address").min(1, "Email is required"),
-    password: z.string().min(8, "Password must be at least 8 characters").max(32, "Password must not exceed 32 characters"),
-  });
+  
   return (
     <div className="login-container">
       <div className="login-card">
@@ -35,10 +33,10 @@ export default function Login() {
           </div>
           <h2>Welcome Back</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input type="email" placeholder="Email" autoComplete ="false" {...register("email")} />
+            <input type="email" className='login_input' placeholder="Email" autoComplete ="false" {...register("email")} />
             <p>{errors.email?.message}</p>
             {console.log("Email:" + errors.email?.message)}
-            <input type="password" placeholder="Password" {...register("password")} />
+            <input type="password" className='login_input'placeholder="Password" {...register("password")} />
             <p>{errors.password?.message}</p>
             {console.log("Password:" + errors.password?.message)}
             <button type="submit" className="login-button">Log in</button>

@@ -5,7 +5,8 @@ export default function SearchBar() {
     <input 
       type="text" 
       placeholder="Search" 
-      className="input" 
+      className="search-input" 
     />
+    
   );
 }

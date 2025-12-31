@@ -1,15 +1,35 @@
 .top_nav_bar{
     margin: 0;
-    color:#ffffff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 14rem;
     align-items: center;
-    padding-left: 1.5em;
+    padding: 0 16px;
+    height: 56px;
+    /* gap: 1rem; */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .top_nav_bar {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+
+
+@media (max-width: 400px) {
+    .logo span {
+        display: none;
+    }
 }
 .logo_img{
     max-height: 28px;
+    flex-shrink: 0;
     /* max-width: 28px; */
     /* background-color: white; */
 } 

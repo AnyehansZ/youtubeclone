@@ -6,7 +6,7 @@ import Logo from '@assets/YT/logo.svg';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-
+import { Link } from 'react-router-dom';
 const schema = z.object({
   username: z.string().min(3, "Username is required and must be at least 3 characters").max(30, "Username must not exceed 30 characters"),
   email: z.string().email("Invalid email address").min(1, "Email is required"),
@@ -27,7 +27,8 @@ export default function SignUp() {
   defaultValues: {
     username: "",
     email: "",
-    password:"Must be greater then 8 characters"
+    password:"",
+    confirm_password:""
   }
   }
   );
@@ -58,17 +59,19 @@ export default function SignUp() {
           </div>
           <h2>Or</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input type="text" placeholder="Userame" {...register("username")} />
+            <input type="text" className='sign_up_input' placeholder="Userame" {...register("username")} />
             <p>{errors.username?.message}</p>
-            <input type="email" placeholder="Email" {...register("email")} />
+            <input type="email" className='sign_up_input' placeholder="Email" {...register("email")} />
             <p>{errors.email?.message}</p>
-            <input type="password" placeholder="Password" {...register("password")} />
+            <input type="password" className='sign_up_input' placeholder="Password" {...register("password")} />
             <p>{errors.password?.message}</p>
-            <input type="password" placeholder="Confirm password" {...register("confirm_password")} />
+            <input type="password" className='sign_up_input' placeholder="Confirm password" {...register("confirm_password")} />
             <p>{errors.confirm_password?.message}</p>
             <button type="submit" className="sign-up-button">Create Account</button>
           </form>
+          <Link to="/login">
           <p className="separator">Already have an account? <u>Log in</u></p>
+          </Link>
         </div>
       </div>
     </div>

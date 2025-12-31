@@ -7,3 +7,10 @@
     /* flex:1; */
     overflow:hidden;
 }
+
+/* Mobile - Stack layout vertically */
+@media (max-width: 768px) {
+    .box_wrap {
+        flex-direction: column;
+    }
+}

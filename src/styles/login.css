@@ -7,11 +7,29 @@
 }
 .login-card {
   width: 500px;
+  max-width: 90vw;
   background-color: #1E1E1E; 
   border-radius: 16px;
   overflow: hidden; 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
   position: relative;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .login-card {
+        width: 100%;
+        max-width: 95vw;
+        margin: 20px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .login-card {
+        max-width: 100%;
+        margin: 10px;
+    }
 }
 
 .card-background {
@@ -43,8 +61,22 @@
   color: #ffffff;
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .card-content {
+        padding: 30px 20px;
+    }
+}
 
-input {
+/* Small Mobile */
+@media (max-width: 480px) {
+    .card-content {
+        padding: 20px 16px;
+    }
+}
+
+
+.login_input {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -55,7 +87,7 @@ input {
   box-sizing: border-box;
   transition: box-shadow 0.3s ease, border 0.3s ease;
 }
-input:focus {
+.login_input:focus {
     outline: none; 
     border: 1px solid #FF3347; /* Use the bright red login button color */
     box-shadow:  0 0 0 2px rgba(255, 51, 71, 0.4), inset 0 1px 3px rgba(0, 0, 0, 0.5); 

@@ -4,7 +4,7 @@ import '@styles/wrapper.css';
 export default function MenuButton() {
   return (
     <button className="menu_btn" title="Menu">
-      <Menu size={24} color="white" />
+      <Menu size={20} color="white" />
     </button>
   );
 }

@@ -1,4 +1,3 @@
-import MicrophoneButton from '@components/ui/MicrophoneButton';
 import NotificationButton from '@components/ui/NotificationButton';
 import CreateButton from '@components/ui/CreateButton';
 import ProfileButton from '@components/ui/ProfileButton';
@@ -8,9 +7,7 @@ import '@styles/wrapper.css';
 export default function ToolbarContainer() {
   return (
     <div className="tr_cnp_wrap">
-      <div className="tr_icn_wrap flex_row">
-        <MicrophoneButton />
-      </div>
+      
       <div className="tr_icn_wrap flex_row">
         <NotificationButton />
         <CreateButton />

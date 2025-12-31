@@ -6,3 +6,10 @@
     margin: 0;
     padding: 0;
 }
+
+/* Mobile Responsive - Ensure full width on mobile */
+@media (max-width: 768px) {
+    .page_container {
+        width: 100%;
+    }
+}
